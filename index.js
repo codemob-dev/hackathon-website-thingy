@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", event=>{
         mouseData.x = event.clientX;
         mouseData.y = event.clientY;
     });
+
+    var cookieNumber = 0;
+
     setInterval(() => {
         let buttonX = +nextButton.style.left.replace('vw', '') / 100 * window.innerWidth;
         let buttonY = +nextButton.style.top .replace('vh', '') / 100 * window.innerHeight;
@@ -35,24 +38,36 @@ document.addEventListener("DOMContentLoaded", event=>{
         backgroundX += (mouseData.x / window.innerWidth  - .5) * -2;
         backgroundY += (mouseData.y / window.innerHeight - .5) * 2;
 
-        document.documentElement.style.backgroundPositionX = backgroundX + '%'
-        document.documentElement.style.backgroundPositionY = backgroundY + '%'
+        document.documentElement.style.backgroundPositionX = backgroundX + '%';
+        document.documentElement.style.backgroundPositionY = backgroundY + '%';
+
+        let acceptButton = document.getElementById("cookie-accept");
+
+        window.localStorage.setItem("freshlyBakedCookie"+cookieNumber, 'its for u');
+        cookieNumber ++;
+        
     }, 1000/60);
 
     
     var itemNum = 0;
     clickNext = function() {
-        for (let i = 0; i < 20; i++) {
-            (new Audio("pipe.mp3")).play();
-        }
+        chaosSound();
         let item = document.getElementById('next-item'+itemNum);
         item.style = "display:block;";
-        setInterval(()=>{item.style.opacity = 1}, 0);
-        itemNum++;
+        setInterval(()=>{
+            item.style.opacity = 1;
+        }, 0);
+
         
         nextButton.style.left = Math.random() * 100 + 'vw';
         nextButton.style.top  = Math.random() * 100 + 'vh';
-    }
 
+        itemNum++;
+    }
 });
 var clickNext;
+function chaosSound() {
+    for (let i = 0; i < 5; i++) {
+        (new Audio("pipe.mp3")).play();
+    }
+}
