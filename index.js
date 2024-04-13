@@ -59,8 +59,9 @@ document.addEventListener("DOMContentLoaded", event=>{
 
         if (itemNum==4) {
             let audio = (new Audio("song.mp3")).play();
-            audio.volume = Infinity;
             audio.play();
+            document.body.style = "animation: hue-rotate linear infinite 1.5s";
+            audio.then(()=>{document.body.style = ""});
         }
         
         nextButton.style.left = Math.random() * 100 + 'vw';
@@ -73,7 +74,6 @@ var clickNext;
 function chaosSound() {
     for (let i = 0; i < 5; i++) {
         let audio = (new Audio("pipe.mp3"));
-        audio.volume = Infinity;
         audio.play();
     }
 }
