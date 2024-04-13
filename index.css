@@ -7,6 +7,20 @@ h1 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+s {
+    filter: brightness(60%) opacity(50%);
+}
+
+b {
+    filter: brightness(120%);
+}
+
+p {
+    color: rgb(165, 171, 204);
+    margin-left: 5%;
+    font-size: large;
+}
+
 #next-button {
     text-align: center;
     position: fixed;
@@ -38,7 +52,7 @@ h1 {
     bottom: 4px;
     width: min(90vw, 50vmax);
     padding: 5px;
-    background: rgba(39, 67, 109, 0.432);
+    background: rgba(39, 67, 109, 0.726);
 }
 h1 {
     text-align: center;
@@ -47,13 +61,9 @@ html {
     background-image: url("background.svg");
     background-repeat: repeat;
     background-size: 25%;
-    animation: backgroundLoop infinite linear 5s;
 }
-@keyframes backgroundLoop {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: -100% 100%;
-    }
+
+.next-item {
+    opacity: 0%;
+    transition: opacity 1s;
 }
