@@ -83,6 +83,7 @@ html {
     background: rgba(39, 67, 109, 0.911);
     width: 90vmin;
     height: 80vmin;
+    border-radius: 10vw;
 }
 
 #mobile-user-detected p {
