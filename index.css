@@ -70,3 +70,40 @@ html {
     transition: opacity 1.5s;
     display: none;
 }
+
+#mobile-user-detected {
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    outline: 3px solid black;
+    height: fit-content;
+    padding: 5px;
+    background: rgba(39, 67, 109, 0.911);
+    width: 90vmin;
+    height: 80vmin;
+}
+
+#mobile-user-detected p {
+    font-size: x-large;
+}
+
+
+#mobile-user-detected h1 {
+    font-size: xx-large;
+}
+#mobile-user-detected img {
+    height: 75%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #mobile-user-detected {
+        display: none;
+    }
+}
+@media not ((hover: hover) and (pointer: fine)) {
+    #container, #next-button {
+        display: none!important;
+    }
+}
