@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", event=>{
         }, 0);
 
         if (itemNum==4) {
-            let audio = (new Audio("song.mp3")).play();
+            let audio = (new Audio("song.mp3"));
             audio.play();
+            audio.onended = ()=>{document.body.style = ""};
             document.body.style = "animation: hue-rotate linear infinite 1.5s";
-            audio.then(()=>{document.body.style = ""});
         }
         
         nextButton.style.left = Math.random() * 100 + 'vw';
