@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", event=>{
     clickNext = function() {
         (new Audio("pipe.mp3")).play();
         let item = document.getElementById('next-item'+itemNum);
-        item.style.opacity = "100%"
+        item.style.opacity = "100%";
+        item.style.display = "default";
         itemNum++;
         
         nextButton.style.left = Math.random() * 100 + 'vw';

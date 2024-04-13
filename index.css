@@ -45,12 +45,14 @@ p {
 #container {
     position: absolute;
     left: 50vw;
+    top: 1vh;
     transform: translateX(-50%);
     border-radius: 6px;
-    border: 3px solid black;
-    top: 4px;
-    bottom: 4px;
+    outline: 3px solid black;
+    min-height: calc(98vh - 12px);
+    height: fit-content;
     width: min(90vw, 50vmax);
+    margin: 0;
     padding: 5px;
     background: rgba(39, 67, 109, 0.726);
 }
@@ -66,4 +68,5 @@ html {
 .next-item {
     opacity: 0%;
     transition: opacity 1s;
+    display: none;
 }
