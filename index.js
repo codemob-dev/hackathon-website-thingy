@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", event=>{
 
         window.localStorage.setItem("freshlyBakedCookie"+cookieNumber, 'its for u');
         cookieNumber ++;
-        
     }, 1000/60);
 
     
@@ -58,6 +57,9 @@ document.addEventListener("DOMContentLoaded", event=>{
             item.style.opacity = 1;
         }, 0);
 
+        if (itemNum==4) {
+            (new Audio("song.mp3")).play();
+        }
         
         nextButton.style.left = Math.random() * 100 + 'vw';
         nextButton.style.top  = Math.random() * 100 + 'vh';
