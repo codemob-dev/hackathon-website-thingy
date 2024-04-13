@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", event=>{
     
     var itemNum = 0;
     clickNext = function() {
-        (new Audio("pipe.mp3")).play();
+        for (let i = 0; i < 20; i++) {
+            (new Audio("pipe.mp3")).play();
+        }
         let item = document.getElementById('next-item'+itemNum);
         item.style.opacity = "100%";
         item.style.display = "default";
