@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", event=>{
         }, 0);
 
         if (itemNum==4) {
-            (new Audio("song.mp3")).play();
+            let audio = (new Audio("song.mp3")).play();
+            audio.volume = Infinity;
+            audio.play();
         }
         
         nextButton.style.left = Math.random() * 100 + 'vw';
@@ -70,6 +72,8 @@ document.addEventListener("DOMContentLoaded", event=>{
 var clickNext;
 function chaosSound() {
     for (let i = 0; i < 5; i++) {
-        (new Audio("pipe.mp3")).play();
+        let audio = (new Audio("pipe.mp3"));
+        audio.volume = Infinity;
+        audio.play();
     }
 }
